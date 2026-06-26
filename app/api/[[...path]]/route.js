@@ -136,7 +136,7 @@ async function handleGetTests(request) {
     if (subject) query.subject = subject;
     if (isFree !== null) query.isFree = isFree === 'true';
 
-    const tests = await testsCollection.find(query).toArray();
+    const tests = await testsCollection.find(query).limit(100).toArray();
     return NextResponse.json({ tests }, { status: 200 });
   } catch (error) {
     console.error('Get tests error:', error);
@@ -293,6 +293,7 @@ async function handleGetAttempts(request) {
     const attempts = await attemptsCollection
       .find({ userId: user.id })
       .sort({ completedAt: -1 })
+      .limit(100)
       .toArray();
 
     return NextResponse.json({ attempts }, { status: 200 });
