@@ -37,11 +37,16 @@ A comprehensive full-stack educational platform for MDCAT and other medical entr
 - Logical Reasoning
 
 ### Exam Types Supported (Architecture ready)
-- MDCAT (Primary focus)
+- MDCAT Sindh,Punjab, KPK, Fedral, Balochistan (Primary focus)
 - NUMS
+- AMC 
+- Agha khan entrance test
 - NTS
-- Nursing
-- FMGE
+- STS IBA
+- BS Nursing
+- DPT
+- MLT
+- 
 
 ## 🚀 Technology Stack
 
@@ -172,11 +177,11 @@ A comprehensive full-stack educational platform for MDCAT and other medical entr
 - All student features
 - Create new tests
 - Add questions with explanations
-- Set test pricing (free/paid)
 - View student performance
 
 ### Admin
 - All teacher features
+- Set test pricing (free/paid)
 - User management (future)
 - Platform analytics (future)
 - Content moderation (future)
