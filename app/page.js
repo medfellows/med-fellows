@@ -210,7 +210,8 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <p className="text-gray-400">Email: info@medfellows.com</p>
-              <p className="text-gray-400">Phone: +92 XXX XXXXXXX</p>
+              <p className="text-gray-400">Irshad Ahmed: 0322-2575722</p>
+              <p className="text-gray-400">Official: 0331-7366689</p>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
