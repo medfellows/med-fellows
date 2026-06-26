@@ -7,6 +7,25 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BookOpen, Trophy, Users, GraduationCap, CheckCircle, Star } from 'lucide-react'
 
+export const metadata = {
+  title: 'MDCAT Preparation & Mock Tests Online',
+  description: 'Best MDCAT preparation platform in Pakistan. Practice with 10,000+ MCQs, take full-length mock tests, and track your performance. Join 5,000+ successful students preparing for MDCAT, NUMS, NTS exams.',
+  openGraph: {
+    title: 'Med Fellows - MDCAT Preparation & Mock Tests Online',
+    description: 'Practice with 10,000+ MCQs and ace your MDCAT exam. Expert-created content covering Biology, Chemistry, Physics, English, and Logical Reasoning.',
+    url: 'https://med-fellows.emergent.host/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Med Fellows - MDCAT Preparation Platform',
+    description: 'Practice with 10,000+ MCQs and ace your MDCAT exam.',
+  },
+  alternates: {
+    canonical: 'https://med-fellows.emergent.host/',
+  },
+}
+
 export default function Home() {
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -24,7 +43,7 @@ export default function Home() {
       <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <GraduationCap className="h-8 w-8 text-blue-600" />
+            <GraduationCap className="h-8 w-8 text-blue-600" aria-label="Med Fellows Logo" />
             <span className="text-2xl font-bold text-blue-600">Med Fellows</span>
           </div>
           <div className="flex items-center gap-4">

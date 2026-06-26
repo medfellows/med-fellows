@@ -1,0 +1,22 @@
+# Med Fellows - Robots.txt
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow private pages
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /teacher
+Disallow: /api
+
+# Allow specific pages
+Allow: /tests
+Allow: /login
+Allow: /register
+
+# Sitemap location
+Sitemap: https://med-fellows.emergent.host/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
