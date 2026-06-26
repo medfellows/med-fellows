@@ -348,12 +348,20 @@ async function handleGetDashboardStats(request) {
       ? attempts.reduce((sum, a) => sum + a.score, 0) / attempts.length
       : 0;
 
-    // Subject-wise performance
+    // Subject-wise performance - Optimized to avoid N+1 queries
     const testsCollection = await getCollection('tests');
     const subjectStats = {};
 
+    // Extract unique test IDs from attempts
+    const testIds = [...new Set(attempts.map(a => a.testId))];
+    
+    // Fetch all tests in one query
+    const tests = await testsCollection.find({ id: { $in: testIds } }).toArray();
+    const testsMap = Object.fromEntries(tests.map(t => [t.id, t]));
+    
+    // Build subject stats using the map
     for (const attempt of attempts) {
-      const test = await testsCollection.findOne({ id: attempt.testId });
+      const test = testsMap[attempt.testId];
       if (test) {
         if (!subjectStats[test.subject]) {
           subjectStats[test.subject] = { total: 0, sum: 0 };
