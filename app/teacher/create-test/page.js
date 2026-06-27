@@ -38,20 +38,24 @@ export default function CreateTest() {
     ]
   })
 
-  useState(() => {
-    const userData = localStorage.getItem('user')
-    if (!userData) {
-      router.push('/login')
-      return
-    }
-    const parsedUser = JSON.parse(userData)
-    if (parsedUser.role !== 'teacher' && parsedUser.role !== 'admin') {
-      router.push('/dashboard')
-      return
-    }
-    setUser(parsedUser)
-  }, [])
+useEffect(() => {
+  const userData = localStorage.getItem('user')
 
+  if (!userData) {
+    router.push('/login')
+    return
+  }
+
+  const parsedUser = JSON.parse(userData)
+
+  if (parsedUser.role !== 'teacher' && parsedUser.role !== 'admin') {
+    router.push('/dashboard')
+    return
+  }
+
+  setUser(parsedUser)
+}, [router])
+  
   const addQuestion = () => {
     setTestData({
       ...testData,
